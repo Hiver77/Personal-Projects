@@ -1,6 +1,22 @@
 import numpy as np
 
+#Se crea un diccionario que contendrá a posición de cada ficha
+Fichas = ['Torre','Caballo','alfín','Reina','Rey','Peón'] 
 Tablero = {}
-Tablero['Caballo'] = np.zeros(shape=(8,8))
 
-print(Tablero)
+for fich in Fichas:
+    Tablero[fich] = np.zeros(shape=(8,8))
+
+#Posición aleatoria
+Pi = np.random.randint(0,8)
+Pj = np.random.randint(0,8)
+
+#Posibles movimiento Torre
+for i in range(0,8):
+        #Tablero['Caballo'][i][j] = 0
+        for j in range(0,8):
+            #if (j==Pj):
+            if (i==Pi) or (j==Pj):
+                Tablero['Caballo'][i][j] = 1
+
+Tablero['Caballo'][Pi][Pj] = 8
