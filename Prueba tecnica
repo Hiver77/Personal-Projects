@@ -11,12 +11,19 @@ for fich in Fichas:
 Pi = np.random.randint(0,8)
 Pj = np.random.randint(0,8)
 
-#Posibles movimiento Torre
-for i in range(0,8):
-        #Tablero['Caballo'][i][j] = 0
-        for j in range(0,8):
-            #if (j==Pj):
-            if (i==Pi) or (j==Pj):
-                Tablero['Caballo'][i][j] = 1
+#Posibles movimiento fichas
+for fich in Fichas:    
+     
+    for i in range(0,8):
+            #Tablero['Caballo'][i][j] = 0
+            for j in range(0,8):
+                #if (j==Pj):
+                if fich == 'Torre':
+                    if (i==Pi) or (j==Pj):
+                        Tablero[fich][i][j] = 1
+                
+                if fich == 'alfín':
+                    if (i==Pi) or (j==Pj):
+                        Tablero[fich][i][j] = 1
 
-Tablero['Caballo'][Pi][Pj] = 8
+    Tablero[fich][Pi][Pj] = 8   
